@@ -6,7 +6,9 @@
     margin:0px;
     font-family: 'Inter', sans-serif;
 }
-
+body{
+    background-color: #EFEBE3;
+}
 
 /* links para as paginas */
 header{
@@ -64,7 +66,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 100px;
+    padding: 90px;
     background-color: #EFEBE3;
 }
 .dev-container {

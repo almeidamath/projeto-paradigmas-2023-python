@@ -17,3 +17,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+function openModal() {
+    var modal = document.getElementById('editarDietaModal');
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    var modal = document.getElementById('editarDietaModal');
+    modal.style.display = 'none';
+}
+  // Adicionar um ouvinte de evento para capturar a mudança no <select>
+  document.querySelector('select[name="tipo_dieta"]').addEventListener('change', function() {
+    // Obter o valor do data-id associado à opção selecionada
+    const selectedOption = this.options[this.selectedIndex];
+    const dietaId = selectedOption.getAttribute('data-id');
+    
+    // Atribuir o valor do ID da dieta ao campo id_dieta
+    document.getElementById('id_dieta').value = dietaId;
+});

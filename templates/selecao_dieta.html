@@ -39,24 +39,28 @@
         </ul>   
     </header>
     <main class="principal">
-    <h1>Selecione a Dieta:</h1>
+        <h1>Selecione a Dieta:</h1>
 
-    <form action="/mostrar_dieta" method="POST">
-        <select name="tipo_dieta">
-            <option value="1">Dieta para Emagrecer</option>
-            <option value="2">Dieta para Ganho de Massa</option>
-            <option value="3">Dieta Saudável</option>
-        </select>
-        <input type="submit" value="Ver Dieta">
-    </form>
+        <form class="formulario" action="/mostrar_dieta" method="POST">
+            <select name="tipo_dieta" class="select">
+                <option value="1" data-id="1">Dieta para Emagrecer</option>
+                <option value="2" data-id="2">Dieta para Ganho de Massa</option>
+                <option value="3" data-id="3">Dieta Saudável</option>
+            </select>
+            <br>
+            <input type="submit" value="Ver Dieta" class="buttonInput">
+        </form>
 
-    <div id="dieta_exibida">
-        {% if dieta %}
-            <h2>Dieta Selecionada:</h2>
-            {{ dieta | safe }}
-        {% endif %}
-    </div>
+        <div id="dieta_exibida">
+            {% if dieta %}
+                <h2>{{ dieta.nome }}</h2>
+                {{ dieta | safe }}
+            {% endif %}
+        </div>
     </main>
+    <footer>
+        <h2>TODOS OS DIREITOS RESERVADOS | © NUTRI_DEV 2023 </h2>
+      </footer>
     <script src="../static/js/dieta.js"></script>
 </body>
 

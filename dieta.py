@@ -210,7 +210,7 @@ def obter_dieta(tipo_dieta):
         elif tipo_dieta == '3':
             tabela = 'Saudável'
         else:
-            return None  # Retorna None se o tipo de dieta for inválido
+            return None 
 
         if tabela:
             cursor.execute("SELECT id_dieta AS id, tipo_dieta AS \"Tipo de Dieta\", cafe_manha AS \"Café da Manhã\", lanche_manha AS \"Lanche da Manhã\", almoço AS \"Almoco\", lanche_tarde AS \"Lanche da Tarde\", janta AS \"Jantar\", ceia AS \"Ceia\" FROM dietas WHERE tipo_dieta = %s", (tabela,))
@@ -229,8 +229,8 @@ def pagina_dieta():
 @app.route('/mostrar_dieta', methods=['POST'])
 def mostrar_dieta():
     tipo_dieta = request.form['tipo_dieta']
-
     dieta = obter_dieta(tipo_dieta)
     return render_template('selecao_dieta.html', dieta=dieta)
+
 if __name__ == '__main__':
     app.run(debug=True)
